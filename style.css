@@ -1,0 +1,19 @@
+body{
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  text-align: center;
+}
+
+#canvas {
+  height: 720px; 
+  width: 720px; 
+  /* background-color: darkorange; */
+  margin: auto;
+  border: solid black 2px;
+  display: flex;
+  flex-flow: row wrap;
+
+}
+
+.pixel:hover {
+  background-color: black;  
+}
