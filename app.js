@@ -1,11 +1,3 @@
-// const clearBtn = document.querySelector('button')
-
-// function getUserNum (){
-//   let userNum = prompt('Please enter a height/width between 2 and 64')
-//   return parseInt(userNum) 
-// }
-
-
 
 function createPixels(num) { //creates a grid of 'pixels' num tall by num wide
   const canvas = document.querySelector("#canvas");
@@ -30,10 +22,10 @@ function changeColor(){
 
 createPixels(16) //invoke the pixel-creating function with for a 16x16 grid
 
-const pixelsArr = document.getElementsByClassName('pixel') //assigning variable for pixels
-
-for(pix of pixelsArr){
-  
-}
+//TODO: 
+//1. add ability to change pixel height/width
+//2. let mouse drag over pixels instead of clicking each
+//3. ability to change colors
+//4. click to revert back to white
 
 
