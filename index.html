@@ -1,27 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <title>Document</title>
-</head>
-<body>
-  <h1>Pixel art creator</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="shortcut icon" href="./assets/fav.png" type="image/x-icon">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Pixel Etch-a-Sketch</title>
+  </head>
+  <body>
+    <h3>Pixel Etch-a-Sketch</h3>
 
+    <form>
+      <button id="reset">Reset</button>
+    </form>
+
+    <br />
+
+    <form>
+      <input type="radio" name="ink-color" id="black" checked />Ink
+      <input type="radio" name="ink-color" id="eraser" />Eraser
+    </form>
+
+    <br />
+
+    <!-- TODO: need to figure this out
   <form>
-  <button id="clear" onclick="getUserNum()">Clear the Board</button>
-</form>
-  
-  <br><br>
+    <input type="radio" name="style" id="etch" checked>Etch-a-Sketch Mode (better for large canvas)
+    <input type="radio" name="style" id="click">Click Mode (better for small canvas)
+  </form>
+  -->
+    <br />
 
-  <section id="canvas-container">
-    <div id="canvas">
-      
-    </div>
-  </section>
+    <section id="canvas-container">
+      <div id="canvas"></div>
+    </section>
 
-  <script src="app.js"></script>
-</body>
+    <script src="app.js"></script>
+  </body>
 </html>
