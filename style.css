@@ -1,19 +1,27 @@
-body{
-  font-family: 'Permanent Marker', cursive;
+body {
+  font-family: monospace;
+  font-size: x-large;
   text-align: center;
+  background: url("https://images.pexels.com/photos/1670977/pexels-photo-1670977.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
 }
-
+#setup {
+  padding: 10px;
+  background-color: rgba(30, 47, 54, 0.424);
+}
 #canvas {
-  height: 720px; 
-  width: 720px; 
+  height: 620px;
+  width: 620px;
   /* background-color: darkorange; */
   margin: auto;
   border: solid black 2px;
   display: flex;
   flex-flow: row wrap;
-
 }
 
-.pixel:hover {
-  background-color: black;  
+.pixels {
+  background-color: rgba(255, 255, 255);
+}
+
+.pixels:hover {
+  background-color: rgb(219, 218, 218);
 }

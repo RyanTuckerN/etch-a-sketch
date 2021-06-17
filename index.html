@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link rel="shortcut icon" href="./assets/fav.png" type="image/x-icon">
+    <!-- <link rel="preconnect" href="https://fonts.gstatic.com" /> -->
+    <link rel="shortcut icon" href="./assets/fav.png" type="image/x-icon" />
     <link
       href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap"
       rel="stylesheet"
@@ -14,27 +14,26 @@
     <title>Pixel Etch-a-Sketch</title>
   </head>
   <body>
-    <h3>Pixel Etch-a-Sketch</h3>
+    <section id="setup">
+      <h3>Pixel Etch-a-Sketch</h3>
+      <!-- <form> -->
+      step 1: <button id="reset">Choose size</button> <br /><br />
+      Step 2: <button id="etch">Etch mode</button>
+      <button id="click">Click mode</button>
+      <!-- </form> -->
+      <br />
+      <br />
+      <form>
+        <input type="radio" name="ink-color" id="black" checked />Ink
+        <input type="radio" name="ink-color" id="eraser" />Eraser
+        <input type="radio" name="ink-color" id="rainbow" />Confetti
+        <br />
+        <!-- <input type="radio" name="game-mode" id="etch" />Etch-a-Sketch mode (better for big canvas) -->
+        <!-- <input type="radio" name="game-mode" id="click" checked/>Click mode (better for small canvas) -->
+      </form>
 
-    <form>
-      <button id="reset">Reset</button>
-    </form>
-
-    <br />
-
-    <form>
-      <input type="radio" name="ink-color" id="black" checked />Ink
-      <input type="radio" name="ink-color" id="eraser" />Eraser
-    </form>
-
-    <br />
-
-    <!-- TODO: need to figure this out
-  <form>
-    <input type="radio" name="style" id="etch" checked>Etch-a-Sketch Mode (better for large canvas)
-    <input type="radio" name="style" id="click">Click Mode (better for small canvas)
-  </form>
-  -->
+      <br />
+    </section>
     <br />
 
     <section id="canvas-container">
