@@ -1,17 +1,18 @@
 // *** *** *** DECLARATIONS *** *** *** //
 
 //buttons
-const resetBtn = document.querySelector("#reset");
-const etchBtn = document.querySelector("#etch");
-const clickBtn = document.querySelector("#click");
+const chooseSize = document.querySelector("#reset")
+const etchBtn = document.querySelector("#etch")
+const clickBtn = document.querySelector("#click")
+const toggleGrid = document.querySelector('#toggle-grid')
 
 //radios
-const blackInk = document.querySelector("#black");
-const eraser = document.querySelector("#eraser");
+const blackInk = document.querySelector("#black")
+const eraser = document.querySelector("#eraser")
 //canvas
-const canvas = document.querySelector("#canvas");
+const canvas = document.querySelector("#canvas")
 //'pixels'
-const px = document.getElementsByClassName("pixels");
+const px = document.getElementsByClassName("pixels")
 
 // *** DEFAULT CANVAS CREATION *** //
 
@@ -24,10 +25,8 @@ for (let i = 0; i < px.length; i++) {
       ? (px[i].style.backgroundColor = "white")
       : blackInk.checked
       ? (px[i].style.backgroundColor = "black")
-      : (px[i].style.backgroundColor = `hsl(${
-          Math.random() * 360
-        }, 100%, 50%)`);
-  };
+      : (px[i].style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`)
+  }
 }
 
 // *** *** *** FUNCTIONS *** *** *** //
@@ -45,13 +44,14 @@ function createPixels(num) {
   }
   num *= num;
   for (let i = 0; i < num; i++) {
-    const pixel = document.createElement("div");
-    const sides = 620 / Math.sqrt(num) - 2;
-    pixel.style.border = "solid lightgrey 1px";
-    pixel.style.width = sides + "px";
-    pixel.style.height = sides + "px";
-    pixel.className = "pixels";
-    canvas.appendChild(pixel);
+    const pixel = document.createElement("div")
+    canvas.style.gridTemplateColumns = `repeat(${Math.sqrt(num)},1fr)`
+    const sides = 620 / Math.sqrt(num) - 2
+    // pixel.style.border = "solid lightgrey 1px"
+    pixel.style.width = sides + "px"
+    pixel.style.height = sides + "px"
+    pixel.className = "pixels"
+    canvas.appendChild(pixel)
   }
 }
 
@@ -61,16 +61,16 @@ function createPixels(num) {
 3. returns input 
 */
 function getUserNumber() {
-  let input = prompt("Choose a height/width between 1 and 100:");
+  let input = prompt("Choose a height/width between 1 and 100:")
   while (!/^[0-9]+$/.test(input) || input < 1 || input > 100) {
-    alert(`You need to learn to follow directions.`);
-    input = prompt("Enter a number: ");
+    alert(`You need to learn to follow directions.`)
+    input = prompt("Enter a number: ")
   }
   pixelWidth = input;
   clearGrid();
   for (let i = 0; i < px.length; i++) {
     px[i].onmouseover = function () {
-      console.log(px[i]);
+      // console.log(px[i]);
       eraser.checked
         ? (px[i].style.backgroundColor = "white")
         : blackInk.checked
@@ -94,9 +94,9 @@ function clearGrid() {
   createPixels(pixelWidth);
 }
 
-/*
- *** *** *** GAME MODES *** *** ***
- */
+
+//  *** *** *** GAME MODES *** *** ***
+
 function etchMode() {
   clearGrid();
   for (let i = 0; i < px.length; i++) {
@@ -106,10 +106,8 @@ function etchMode() {
         ? (px[i].style.backgroundColor = "white")
         : blackInk.checked
         ? (px[i].style.backgroundColor = "black")
-        : (px[i].style.backgroundColor = `hsl(${
-            Math.random() * 360
-          }, 100%, 50%)`);
-    };
+        : (px[i].style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`)
+    }
   }
 }
 
@@ -122,23 +120,28 @@ function clickMode() {
         ? (px[i].style.backgroundColor = "white")
         : blackInk.checked
         ? (px[i].style.backgroundColor = "black")
-        : (px[i].style.backgroundColor = `hsl(${
-            Math.random() * 360
-          }, 100%, 50%)`);
-    };
+        : (px[i].style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`)
+    }
   }
 }
 
 // *** *** *** BUTTON EVENTS *** *** *** //
 
-console.log(px);
-resetBtn.addEventListener("click", getUserNumber);
-etchBtn.addEventListener("click", etchMode);
-clickBtn.addEventListener("click", clickMode);
+chooseSize.addEventListener("click", getUserNumber)
+etchBtn.addEventListener("click", etchMode)
+clickBtn.addEventListener("click", clickMode)
+// toggleGrid.addEventListener("click", () => {
+//   for(let p of px){
+//     p.classList.toggle ('border')
+//     p.classList.toggle ('pixels')
+//   }
+// })
 
 //TODO:
 //1. add ability to change pixel height/width --> done
 //2. let mouse drag over pixels instead of clicking each --> done
 //3. ability to change colors --> done
-//4. add ability to remove pixel grid-lines
+//4. add ability to remove pixel grid-lines --> line 133, not working yet
 //5. color picker?
+//6. 'pixels' aren't loading correctly for some user sizes on firefox, --> fixed, changed from flexbox to css grid
+  //chrome seems perfect

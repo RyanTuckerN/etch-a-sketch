@@ -18,16 +18,16 @@
       <h3>Pixel Etch-a-Sketch</h3>
       <!-- <form> -->
       step 1: <button id="reset">Choose size</button> <br /><br />
-      Step 2: <button id="etch">Etch mode</button>
-      <button id="click">Click mode</button>
+      Step 2: <button id="etch">New game in 'Etch' mode</button>
+      <button id="click">New game in 'Click' mode</button>
       <!-- </form> -->
       <br />
       <br />
-      <form>
+      <form onsubmit="return false"> options:
         <input type="radio" name="ink-color" id="black" checked />Ink
         <input type="radio" name="ink-color" id="eraser" />Eraser
         <input type="radio" name="ink-color" id="rainbow" />Confetti
-        <br />
+        <!-- <button id="toggle-grid">Toggle gridlines</button> -->
         <!-- <input type="radio" name="game-mode" id="etch" />Etch-a-Sketch mode (better for big canvas) -->
         <!-- <input type="radio" name="game-mode" id="click" checked/>Click mode (better for small canvas) -->
       </form>
